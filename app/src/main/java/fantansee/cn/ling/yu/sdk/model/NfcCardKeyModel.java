@@ -12,7 +12,6 @@ import fantansee.cn.ling.yu.sdk.listener.NfcCardValueInterface;
 public class NfcCardKeyModel {
 
     private Handler handler;
-    public static String GET_NFC_CARD_URL_SERVER = "";
 
     public NfcCardKeyModel(Handler handler) {
         this.handler = handler;
