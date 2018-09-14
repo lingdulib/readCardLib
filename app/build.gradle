@@ -7,6 +7,11 @@ private static def packageTime(){
 android {
     compileSdkVersion 21
     buildToolsVersion '25.0.3'
+
+    lintOptions {
+        abortOnError false
+    }
+
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 21
