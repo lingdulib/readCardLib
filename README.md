@@ -5,6 +5,7 @@ Gradle:
 
 ```java
 implementation 'cn.com.yl.readcard:readcardutils:1.0.1'
+implementation(name: 'fantaseedevicesdk_1935_201805241037', ext: 'aar')
 ```
 
 > Set debug mode
