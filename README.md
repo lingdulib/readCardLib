@@ -1,4 +1,4 @@
-支持android A8 POS 射频卡读取，写入的一组公共方法.
+支持android A8 POS 射频卡,磁条卡读取，写入的一组公共方法.
 
 # 引入项目
 Gradle:
