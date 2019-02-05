@@ -1,6 +1,6 @@
-Support part of the Android POS device reader tools category, the following is the specific use of the method.
+支持android A8 POS 射频卡读取，写入的一组公共方法.
 
-# Download
+# 引入项目
 Gradle:
 
 ```java
@@ -8,21 +8,22 @@ implementation 'cn.com.yl.readcard:readcardutils:1.0.1'
 implementation(name: 'fantaseedevicesdk_1935_201805241037', ext: 'aar')
 ```
 
-> Set debug mode
+> 设置debug模式和声音提示音
 
-Add in the application file:
+ 1.在application文件中，开启debug模式
 
 ```java
 CardLogUtils.setDebug(true);
 ```
 
-In the application file, turn on the card to complete the prompt tone:
+ 2.在application文件中,打开或者关闭读卡，写卡提示音 
+
 
 ```java
 SoundTool.setIsSound(true);
 ```
 
-> initializer
+> 初始化调用
 
 ```java
 private NfcCardUtils mNfcCardUtils;
@@ -31,9 +32,9 @@ private NfcCardUtils mNfcCardUtils;
  mNfcCardUtils.setNfcCardModle(0, 0,new int[]{1，2，3},"FFFFFFFFFFFF",false);
 ```
 
-> Card reading callback method
+> 读卡回调使用说明
 
-Add to the onResume method in activity:
+在Activity的onResume中增加方法:
 
 ```java
 mNfcCardUtils.onResume();
@@ -75,29 +76,27 @@ mNfcCardUtils.onResume();
         });
 ```
 
-> Read the card information method and add:
-
-Read RF card information
+> 射频卡读取方法使用
 
 ```java
 mNfcCardUtils.readNfcNo();
 ```
 
-Read the card information
+> 磁条卡读取方法使用
 
 ```java
 mNfcCardUtils.readMagNo();
 ```
 
-> Release resources
+> 释放资源
 
-Add to the onPause method in activity:
+在activity的onPause方法中调用:
 
 ```java
 mNfcCardUtils.onStop();
 ```
 
-Add to the onDestroy method in activity:
+在activity的onDestroy方法中调用:
 
 ```java
  mNfcCardUtils.destroyInstance();
